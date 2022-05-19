@@ -13,6 +13,7 @@ import userIcon from './images/bx-user.svg'
 import arrowRight from './images/bx-chevron-right.svg'
 import arrowLeft from './images/bx-chevron-left.svg'
 import reactLogo from './images/tools/bxl-react.svg'
+import starLogo from './images/bxs-star.svg'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Hero />
       <MyTools />
       <Testimonials />
+      <Education />
     </div>
   );
 }
@@ -60,8 +62,8 @@ class Testimonials extends React.Component {
         <div className='flex w-8/12 h-full justify-center items-center'>
           <div className='flex w-3/4 h-3/4'>
             <div className='flex flex-col w-1/4 h-full'>
-              <div className='flex w-full h-1/2'>
-                <img src={userIcon}/>
+              <div className='flex w-full h-1/2 items-end justify-center'>
+                <img src={userIcon} className='h-3/4'/>
               </div>
 
               <div className='flex w-full h-1/2 justify-center items-start'>
@@ -71,11 +73,17 @@ class Testimonials extends React.Component {
 
             <div className='flex flex-col w-3/4 h-full'>
               <div className='flex w-full h-1/4'>
-                <h1>X X X X X</h1>
+                <h1 className='flex flex-row pl-8 items-end'>
+                  <img src={starLogo} className='w-12'/>
+                  <img src={starLogo} className='w-12'/>
+                  <img src={starLogo} className='w-12'/>
+                  <img src={starLogo} className='w-12'/>
+                  <img src={starLogo} className='w-12'/>
+                </h1>
               </div>
 
               <div className='flex w-full h-3/4 justify-start items-center'>
-                <h1 className='pl-10 pb-5 text-antiqueWhite font-ver text-2xl font-semibold'>{reviews[this.state.reviewIndex][1]}</h1>
+                <h1 className='pl-10 pb-5 text-antiqueWhite font-ver font-semibold' style={ { fontSize: "2vh" } }>"{reviews[this.state.reviewIndex][1]}"</h1>
               </div>
             </div>
           </div>
@@ -123,17 +131,57 @@ function Hero() {
 function MyTools() {
   return (
     <div className='flex flex-col w-full bg-blackCoffee justify-center items-center overflow-y-clip' style={ { height: "65vh" }}>
-      <h1 className='pb-8 text-antiqueWhite text-5xl font-ver font-bold border-b-4'>Tools I Use</h1>
-      <div className='grid grid-cols-7 gap-48 h-96 w-3/4 items-center justify-evenly object-scale-down'>
-        <a rel='noreferrer' href='https://www.w3.org/TR/CSS/#css' target="_blank" className='w-28 h-28 hover:-translate-y-1 hover:scale-105 duration-200'><img src={css5Logo} alt='css3'/></a>
-        <a rel='noreferrer' href='https://en.wikipedia.org/wiki/HTML5' target="_blank" className='w-28 h-28 hover:-translate-y-1 hover:scale-105 duration-200'><img src={html5Logo} alt='html5'/></a>
-        <a rel='noreferrer' href='https://en.wikipedia.org/wiki/JavaScript' target="_blank" className='w-28 h-28 hover:-translate-y-1 hover:scale-105 duration-200'><img src={javaScriptLogo} alt='js'/></a>
-        <a rel='noreferrer' href='https://www.python.org/' target="_blank" className='w-28 h-28 hover:-translate-y-1 hover:scale-105 duration-200'><img src={pythonLogo} alt='python'/></a>
-        <a rel='noreferrer' href='https://tailwindcss.com/' target="_blank" className='w-28 h-28 hover:-translate-y-1 hover:scale-105 duration-200'><img src={tailwindLogo} alt='tailwind'/></a>
-        <a rel='noreferrer' href='https://unity.com/' target="_blank" className='w-28 h-28 hover:-translate-y-1 hover:scale-105 duration-200'><img src={unityLogo} alt='unity'/></a>
-        <a rel='noreferrer' href='https://reactjs.org/' target="_blank" className='w-28 h-28 hover:-translate-y-1 hover:scale-105 duration-200'><img src={reactLogo} alt='react'/></a>
+      <h1 className='pb-20 text-antiqueWhite text-5xl font-ver font-bold'>Tools I Use</h1>
+      <div className='flex flex-col'>
+        <div className='flex gap-48 w-full h-1/2 pb-32'>
+          <a rel='noreferrer' href='https://tailwindcss.com/' target="_blank" className='w-28 h-28 hover:-translate-y-1 hover:scale-105 duration-200'><img src={tailwindLogo} alt='tailwind'/></a>
+          <a rel='noreferrer' href='https://unity.com/' target="_blank" className='w-28 h-28 hover:-translate-y-1 hover:scale-105 duration-200'><img src={unityLogo} alt='unity'/></a>
+          <a rel='noreferrer' href='https://reactjs.org/' target="_blank" className='w-28 h-28 hover:-translate-y-1 hover:scale-105 duration-200'><img src={reactLogo} alt='react'/></a>
+        </div>
+
+        <div className='flex gap-48 w-full h-1/2'>
+          <a rel='noreferrer' href='https://en.wikipedia.org/wiki/HTML5' target="_blank" className='w-28 h-28 hover:-translate-y-1 hover:scale-105 duration-200'><img src={html5Logo} alt='html5'/></a>
+          <a rel='noreferrer' href='https://en.wikipedia.org/wiki/JavaScript' target="_blank" className='w-28 h-28 hover:-translate-y-1 hover:scale-105 duration-200'><img src={javaScriptLogo} alt='js'/></a>
+          <a rel='noreferrer' href='https://www.python.org/' target="_blank" className='w-28 h-28 hover:-translate-y-1 hover:scale-105 duration-200'><img src={pythonLogo} alt='python'/></a>
+        </div>
       </div>
     </div>
   )
 }
+
+function Education() {
+  return (
+    <div className='flex w-full items-center justify-center bg-blackCoffee' style={ { height: "65vh" } }>
+      <div className='flex flex-col w-3/4 h-3/4 bg-eerieBlack rounded-lg p-12'>
+        <h1 className='text-4xl font-bold font-ver text-antiqueWhite border-b-2 border-white'>Education</h1>
+        <div className='flex flex-row h-1/2 w-full border-b-2 border-white'>
+          <div className='flex flex-col h-full w-1/2 justify-center'>
+            <h1 className='font-ver text-1xl text-antiqueWhite font-semibold'>Spokane Falls Community College</h1>
+            <p className='font-ver text-sm text-gray'>September 2020 - June 2022</p>
+            <p className='font-ver text-sm text-gray'>GPA 3.5</p>
+          </div>
+
+          <div className='flex flex-col h-full w-1/2 justify-center items-start'>
+            <h1 className='font-ver text-1xl text-antiqueWhite font-bold'>Associate's in Arts AA-DTA</h1>
+            <p className='font-ver text-sm text-gray'>Related Coursework: MATH&147, BUS&101, ENGL&235</p>
+          </div>
+        </div>
+
+        <div className='flex h-1/2 w-full'>
+          <div className='flex flex-col h-full w-1/2 justify-center'>
+            <h1 className='font-ver text-1xl text-antiqueWhite font-semibold'>Arizona State University</h1>
+            <p className='font-ver text-sm text-gray'>June 2022 - Present</p>
+            <p className='font-ver text-sm text-gray'>GPA TBD</p>
+          </div>
+
+          <div className='flex flex-col h-full w-1/2 justify-center items-start'>
+            <h1 className='font-ver text-1xl text-antiqueWhite font-bold'>Bachelor's of Science in Software Engineering</h1>
+            <p className='font-ver text-sm text-gray'>Related Coursework: CSE 110, SER 401, MATH 275</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default App;
