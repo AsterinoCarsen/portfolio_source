@@ -2,8 +2,6 @@ import React from 'react';
 import './App.css';
 
 import heroSidebar from './images/heroSidebar.svg'
-
-import css5Logo from "./images/tools/bxl-css3.svg"
 import html5Logo from "./images/tools/bxl-html5.svg"
 import javaScriptLogo from "./images/tools/bxl-javascript.svg"
 import pythonLogo from "./images/tools/bxl-python.svg"
@@ -14,6 +12,10 @@ import arrowRight from './images/bx-chevron-right.svg'
 import arrowLeft from './images/bx-chevron-left.svg'
 import reactLogo from './images/tools/bxl-react.svg'
 import starLogo from './images/bxs-star.svg'
+import bippy from './images/projects/bippy.png'
+import fiverr from './images/projects/fiverr.png'
+import ib from './images/projects/IB.png'
+import itchio from './images/projects/itchio.png'
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
       <MyTools />
       <Testimonials />
       <Education />
+      <Projects />
     </div>
   );
 }
@@ -100,11 +103,17 @@ class Testimonials extends React.Component {
 function NavBar() {
   return (
     <div className='flex w-full h-20 bg-eerieBlack justify-center items-center'>
-      <div className='flex w-3/4 min-h-full justify-end items-center text-antiqueWhite'>
-        <p className='pl-5 pr-5 cursor-pointer hover:-translate-y-1 hover:scale-105 duration-200'>Home</p>
-        <p className='pl-5 pr-5 cursor-pointer hover:-translate-y-1 hover:scale-105 duration-200'>About</p>
-        <p className='pl-5 pr-5 cursor-pointer hover:-translate-y-1 hover:scale-105 duration-200'>Education</p>
-        <p className='pl-5 pr-5 cursor-pointer hover:-translate-y-1 hover:scale-105 duration-200'>Portfolio</p>
+      <div className='flex flex-row w-3/4 h-full text-antiqueWhite'>
+        <div className='flex w-1/2 h-full justify-start items-center'>
+          <a href='https://github.com/AsterinoCarsen/portfolio_source' target="_blank">Made with <span className='text-red'>❤</span>, by Carsen Asterino, on GitHub</a>
+        </div>
+        
+        <div className='flex w-1/2 h-full justify-end items-center'>
+          <p className='pl-5 pr-5 cursor-pointer hover:-translate-y-1 hover:scale-105 duration-200'>Home</p>
+          <p className='pl-5 pr-5 cursor-pointer hover:-translate-y-1 hover:scale-105 duration-200'>About</p>
+          <p className='pl-5 pr-5 cursor-pointer hover:-translate-y-1 hover:scale-105 duration-200'>Education</p>
+          <p className='pl-5 pr-5 cursor-pointer hover:-translate-y-1 hover:scale-105 duration-200'>Portfolio</p>
+        </div>
       </div>
     </div>
   )
@@ -152,7 +161,7 @@ function MyTools() {
 function Education() {
   return (
     <div className='flex w-full items-center justify-center bg-blackCoffee' style={ { height: "65vh" } }>
-      <div className='flex flex-col w-3/4 h-3/4 bg-eerieBlack rounded-lg p-12'>
+      <div className='flex flex-col w-3/4 h-3/4 bg-eerieBlack rounded-lg p-12 drop-shadow-2xl'>
         <h1 className='text-4xl font-bold font-ver text-antiqueWhite border-b-2 border-white'>Education</h1>
         <div className='flex flex-row h-1/2 w-full border-b-2 border-white'>
           <div className='flex flex-col h-full w-1/2 justify-center'>
@@ -179,6 +188,50 @@ function Education() {
             <p className='font-ver text-sm text-gray'>Related Coursework: CSE 110, SER 401, MATH 275</p>
           </div>
         </div>
+      </div>
+    </div>
+  )
+}
+
+function Projects() {
+  return (
+    <div className='flex flex-col w-full bg-eerieBlack' style={ { height: "100vh" } }>
+      <div className='flex w-full h-1/6 items-center justify-center'><h1 className='font-ver text-antiqueWhite text-5xl font-bold'>My Projects</h1></div>
+
+      <div className='grid grid-rows-2 grid-cols-2 w-full h-full p-10 pl-64 pr-64 gap-10 '>
+
+        <div className='flex w-auto h-auto hover:-translate-y-1 hover:scale-105 duration-200' style={ { backgroundImage: `url(${fiverr})` } }>
+          <a href='https://www.fiverr.com/carsen_asterino?public_mode=true' target="_blank" className='w-full h-full'>
+            <div className='flex w-full h-full backdrop-blur-sm backdrop-brightness-50 justify-center items-center'>
+              <h1 className='pb-4 font-ver text-antiqueWhite font-semibold' style={ { fontSize: "7vh" } }>Fiverr</h1>
+            </div>
+          </a>
+        </div>
+
+        <div className='flex w-auto h-auto hover:-translate-y-1 hover:scale-105 duration-200' style={ { backgroundImage: `url(${ib})` } }>
+          <a href='https://game.innovatorsbox.com/' target="_blank" className='w-full h-full'>
+            <div className='flex w-full h-full backdrop-blur-sm backdrop-brightness-50 justify-center items-center'>
+              <h1 className='pb-4 font-ver text-antiqueWhite font-semibold' style={ { fontSize: "7vh" } }>Innovator's Box</h1>
+            </div>
+          </a>
+        </div>
+
+        <div className='flex w-auto h-auto hover:-translate-y-1 hover:scale-105 duration-200' style={ { backgroundImage: `url(${bippy})` } }>
+          <a href='https://carsen.itch.io/bippy' target="_blank" className='w-full h-full'>
+            <div className='flex w-full h-full backdrop-blur-sm backdrop-brightness-50 justify-center items-center'>
+              <h1 className='pb-4 font-ver text-antiqueWhite font-semibold' style={ { fontSize: "7vh" } }>Bippy</h1>
+            </div>
+          </a>
+        </div>
+
+        <div className='flex w-auto h-auto hover:-translate-y-1 hover:scale-105 duration-200' style={ { backgroundImage: `url(${itchio})` } }>
+          <a href='https://carsen.itch.io/' target="_blank" className='w-full h-full'>
+            <div className='flex w-full h-full backdrop-blur-sm backdrop-brightness-50 justify-center items-center'>
+              <h1 className='pb-4 font-ver text-antiqueWhite font-semibold' style={ { fontSize: "7vh" } }>Itch.io</h1>
+            </div>
+          </a>
+        </div>
+
       </div>
     </div>
   )

@@ -12,7 +12,8 @@ module.exports = {
       'oldRose': '#CB8589',
       'mountPink': '#94849B',
       'white': '#FFFFFF',
-      'gray': '#c7c8c9'
+      'gray': '#c7c8c9',
+      'red': '#DD7373'
     },
     fontFamily: {
       'ver': ['Verdana']
